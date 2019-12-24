@@ -89,7 +89,7 @@ const XBOX_ONE = [
 
 Run the example app at [http://localhost:3000](http://localhost:3000).
 
-Open the browser DevTools and check the `console` output for debbuging.
+Open the browser DevTools and check the `console` output for debugging.
 
 ```
 $ npm start
