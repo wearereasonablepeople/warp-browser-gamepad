@@ -1,7 +1,7 @@
 # WARP-BROWSER-GAMEPAD
 
 Easy way to use the browser native gamepad API. 
-Please check the [CanIuse](https://caniuse.com/#search=getGamepads) website before to use this library
+Please check the [CanIuse](https://caniuse.com/#search=getGamepads) website before using this library
 
 ## Usage
 
@@ -33,13 +33,13 @@ const myGamepadInstance = new Gamepad(
   Gamepad.Layouts.XBOX_ONE
 );
 
-// Start to listen to the gamepads connected to the browser
+// Starts the event listener
 myGamepadInstance.start();
 
-// Stop to listen to the gamepads connected to the browser
+// Stops the event listener
 myGamepadInstance.stop();
 
-// Get all active gamepads connected to the browser
+// Get all connected gamepads
 myGamepadInstance.getActiveGamepads()
 
 ```
