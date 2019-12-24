@@ -9,5 +9,10 @@
     "env": {
       "jest": true
     }
+  }, {
+    "files": ["webpack.config.js"],
+    "env": {
+      "node": true
+    }
   }]
 }
