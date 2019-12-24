@@ -87,7 +87,8 @@ const XBOX_ONE = [
 ```
 ## Development
 
-Run the example app at [http://localhost:3000](http://localhost:3000)
+Run the example app at [http://localhost:3000](http://localhost:3000).
+
 Open the browser DevTools and check the `console` output for debbuging.
 
 ```
