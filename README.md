@@ -1,4 +1,4 @@
-# WARP-GAMEPAD (BrowserOnly)
+# WARP-BROWSER-GAMEPAD
 
 Easy way to use the browser native gamepad API. 
 Please check the [CanIuse](https://caniuse.com/#search=getGamepads) website before to use this library
