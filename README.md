@@ -8,7 +8,7 @@ Please check the [CanIuse](https://caniuse.com/#search=getGamepads) website befo
 Install dependencies:
 
 ```
-$ npm install warp-browser-gamepad --save
+$ npm install @wearereasonablepeople/warp-browser-gamepad --save
 ```
 
 ```js
