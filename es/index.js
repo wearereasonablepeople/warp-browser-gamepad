@@ -158,7 +158,11 @@ var WarpBrowserGamepad = (function() {
   }
 
   var createButton = function createButton(pressed, name) {
-    return { name: name, pressed: pressed, value: pressed ? 1.0 : 0.0 };
+    return {
+      name: name,
+      pressed: pressed,
+      value: pressed ? 1.0 : 0.0
+    };
   };
 
   var isButtonPressed = function isButtonPressed(button) {

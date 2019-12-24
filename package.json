@@ -1,5 +1,5 @@
 {
-  "name": "warp-browser-gamepad",
+  "name": "@wearereasonablepeople/warp-browser-gamepad",
   "version": "1.0.0",
   "description": "Manage your gamepads easily",
   "keywords": [
@@ -22,6 +22,9 @@
     "type": "git",
     "url":
       "git+https://github.com/wearereasonablepeople/warp-browser-gamepad.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "main": "lib/index.js",
   "module": "es/index.js",

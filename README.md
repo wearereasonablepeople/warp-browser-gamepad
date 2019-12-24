@@ -39,6 +39,9 @@ myGamepadInstance.start();
 // Stop to listen to the gamepads connected to the browser
 myGamepadInstance.stop();
 
+// Get all active gamepads connected to the browser
+myGamepadInstance.getActiveGamepads()
+
 ```
 
 ## Available Layouts
