@@ -1,4 +1,5 @@
 # WARP-BROWSER-GAMEPAD
+![Build status](https://github.com/wearereasonablepeople/warp-browser-gamepad/workflows/CI/badge.svg)
 
 Easy way to use the browser native gamepad API. 
 Please check the [CanIuse](https://caniuse.com/#search=getGamepads) website before using this library
