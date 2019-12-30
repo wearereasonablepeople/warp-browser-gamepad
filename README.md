@@ -39,7 +39,7 @@ myGamepadInstance.start();
 // Stops the event listener
 myGamepadInstance.stop();
 
-// Get all connected gamepads
+// Returns all connected gamepads
 myGamepadInstance.getActiveGamepads()
 
 ```
