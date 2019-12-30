@@ -1,28 +1,36 @@
-const webpack = require("webpack");
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+
+const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
+  mode: isDev ? "development" : "production",
   target: "web",
-  entry: "./examples",
+  entry: path.resolve(__dirname, isDev ? "example" : "src"),
   output: {
     filename: "index.js"
+  },
+  resolve: {
+    extensions: [".ts", ".js", ".json"]
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
-        use: ["babel-loader", "eslint-loader"]
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [
+          {
+            loader: "babel-loader"
+          }
+        ]
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin(), new ForkTsCheckerWebpackPlugin()],
   devtool: "source-map",
   devServer: {
+    contentBase: path.join(__dirname, "example"),
     port: 3000
   }
 };

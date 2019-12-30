@@ -19,12 +19,12 @@ const Gamepad = require('warp-browser-gamepad').default;
 
 ## How to use
 
-```js
+```ts
 import Gamepad from 'warp-browser-gamepad';
 
-const onButtonChangeHandler = (button, gamepad) => console.log(button, gamepad);
-const onAxesChangeHandler = (button, gamepad) => console.log(button, gamepad);
-const onConnectionChangeHandler = (gamepad) => console.log(gamepad);
+const onButtonChangeHandler = (button: GamepadButton, gamepad: Gamepad) => console.log(button, gamepad);
+const onAxesChangeHandler = (button: GamepadButton, gamepad: Gamepad) => console.log(button, gamepad);
+const onConnectionChangeHandler = (gamepad: Gamepad) => console.log(gamepad);
 
 const myGamepadInstance = new Gamepad(
   onButtonChangeHandler,

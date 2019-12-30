@@ -10,7 +10,7 @@
       "jest": true
     }
   }, {
-    "files": ["webpack.config.js"],
+    "files": ["*.config.js"],
     "env": {
       "node": true
     }
