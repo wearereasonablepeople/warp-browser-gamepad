@@ -14,7 +14,7 @@ $ npm install @wearereasonablepeople/warp-browser-gamepad --save
 ```js
 import Gamepad from 'warp-browser-gamepad';
 // or
-const Gamepad = require('warp-browser-gamepad');
+const Gamepad = require('warp-browser-gamepad').default;
 ```
 
 ## How to use
