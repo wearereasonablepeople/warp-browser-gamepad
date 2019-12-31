@@ -1,4 +1,4 @@
-# WARP-BROWSER-GAMEPAD
+# warp-browser-gamepad
 ![Build status](https://github.com/wearereasonablepeople/warp-browser-gamepad/workflows/CI/badge.svg)
 
 Easy way to use the browser native gamepad API. 
