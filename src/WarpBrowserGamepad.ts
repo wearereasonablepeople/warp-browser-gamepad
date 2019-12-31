@@ -7,11 +7,6 @@ class WarpBrowserGamepad {
   layout: Layout;
   scanning: boolean;
 
-  initialState = Array(4).fill({
-    buttons: Array(DEFAULT.length).fill(this.createButton(false)),
-    axes: null
-  }) as Gamepad[];
-
   constructor(
     onButtonChange: OnButtonChange,
     onAxesChange: OnAxesChange,
@@ -29,6 +24,13 @@ class WarpBrowserGamepad {
     DEFAULT,
     XBOX_ONE
   };
+
+  private createState() {
+    return Array(4).fill({
+      buttons: Array(DEFAULT.length).fill(this.createButton(false)),
+      axes: null
+    }) as Gamepad[];
+  }
 
   private createButton(pressed: Boolean, name?: String): Button {
     return { name, pressed, value: pressed ? 1 : 0 };
@@ -67,15 +69,15 @@ class WarpBrowserGamepad {
     };
   }
 
-  private getAxes(nextGamepad: Gamepad | null, axes: number[]) {
+  private getAxes(nextGamepad: Gamepad | null, prevAxes: number[]) {
     if (
       !nextGamepad ||
-      JSON.stringify(nextGamepad.axes) === JSON.stringify(axes)
+      JSON.stringify(nextGamepad.axes) === JSON.stringify(prevAxes)
     ) {
-      return axes;
+      return prevAxes;
     }
     const nextAxes = [...nextGamepad.axes];
-    if (axes !== null) {
+    if (prevAxes !== null) {
       this.onAxesChange(nextAxes, nextGamepad);
     }
     return nextAxes;
@@ -87,11 +89,13 @@ class WarpBrowserGamepad {
   ) {
     const newstate = Object.assign(
       {},
-      ...Object.entries(prevGamepadsState).map(([i, gp]) => {
+      ...Object.entries(prevGamepadsState).map(([i, prevGamepad]) => {
         const nextGamepad = nextGamepadsState[<any>i];
-        const axes = gp.axes && [...gp.axes];
-        const newButtons = gp.buttons.map(this.getButtons(nextGamepad));
-        const newAxes = this.getAxes(nextGamepad, axes);
+        const prevAxes = prevGamepad.axes && [...prevGamepad.axes];
+        const newButtons = prevGamepad.buttons.map(
+          this.getButtons(nextGamepad)
+        );
+        const newAxes = this.getAxes(nextGamepad, prevAxes);
 
         return { [i]: { buttons: newButtons, axes: newAxes } };
       })
@@ -111,7 +115,7 @@ class WarpBrowserGamepad {
 
   public start() {
     this.scanning = true;
-    this.scan(this.initialState, navigator.getGamepads());
+    this.scan(this.createState(), navigator.getGamepads());
 
     window.addEventListener("gamepadconnected", this.onConnectionChangeHandler);
     window.addEventListener(
