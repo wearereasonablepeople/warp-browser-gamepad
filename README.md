@@ -86,6 +86,10 @@ const XBOX_ONE = [
   "DPadRight"
 ];
 ```
+
+## Tips
+Are you having problems to make your MacOS detect the Xbox controller?
+Check this: [360Controller](https://github.com/360Controller/360Controller), it works for X360 and XONE
 ## Development
 
 Run the example app at [http://localhost:3000](http://localhost:3000).
