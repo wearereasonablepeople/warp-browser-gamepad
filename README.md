@@ -4,7 +4,7 @@
 Easy way to use the browser native gamepad API. 
 Please check the [CanIuse](https://caniuse.com/#search=getGamepads) website before using this library
 
-## Usage
+## Installation
 
 Install dependencies:
 
@@ -12,16 +12,12 @@ Install dependencies:
 $ npm install warp-browser-gamepad --save
 ```
 
-```js
-import Gamepad from 'warp-browser-gamepad';
-// or
-const Gamepad = require('warp-browser-gamepad').default;
-```
-
 ## How to use
 
 ```ts
 import Gamepad from 'warp-browser-gamepad';
+// or
+// const Gamepad = require('warp-browser-gamepad').default;
 
 const onButtonChangeHandler = (button: GamepadButton, gamepad: Gamepad) => console.log(button, gamepad);
 const onAxesChangeHandler = (axes: number[], gamepad: Gamepad) => console.log(axes, gamepad);
