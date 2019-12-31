@@ -24,7 +24,7 @@ const Gamepad = require('warp-browser-gamepad').default;
 import Gamepad from 'warp-browser-gamepad';
 
 const onButtonChangeHandler = (button: GamepadButton, gamepad: Gamepad) => console.log(button, gamepad);
-const onAxesChangeHandler = (button: GamepadButton, gamepad: Gamepad) => console.log(button, gamepad);
+const onAxesChangeHandler = (axes: number[], gamepad: Gamepad) => console.log(axes, gamepad);
 const onConnectionChangeHandler = (gamepad: Gamepad) => console.log(gamepad);
 
 const myGamepadInstance = new Gamepad(
