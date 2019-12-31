@@ -1,5 +1,5 @@
 {
-  "name": "@warp/browser-gamepad",
+  "name": "warp-browser-gamepad",
   "version": "2.0.0",
   "description": ":video_game: An easy way to use the browser gamepad API",
   "keywords": [
